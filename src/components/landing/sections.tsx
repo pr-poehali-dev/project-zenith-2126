@@ -21,7 +21,13 @@ export const sections = [
   {
     id: 'cases',
     title: 'Реализованные объекты',
-    content: 'За плечами — сотни завершённых проектов: жилые комплексы, офисные центры, склады, заводы и частные дома. Работаем по всей России, соблюдаем сроки и бюджет.'
+    content: 'За плечами — сотни завершённых проектов: жилые комплексы, офисные центры, склады, заводы и частные дома.',
+    gallery: [
+      { src: 'https://cdn.poehali.dev/projects/cae339ce-93e9-4d7e-9603-d73b9864f5c1/files/0f6a771c-85f3-47d3-8350-00e33769890f.jpg', label: 'Электромонтаж БЦ' },
+      { src: 'https://cdn.poehali.dev/projects/cae339ce-93e9-4d7e-9603-d73b9864f5c1/files/d5a5fee7-db43-4e3a-812b-b54210def290.jpg', label: 'Видеонаблюдение' },
+      { src: 'https://cdn.poehali.dev/projects/cae339ce-93e9-4d7e-9603-d73b9864f5c1/files/10d06340-c5f6-4881-ad46-409e70acaa34.jpg', label: 'Умный дом' },
+      { src: 'https://cdn.poehali.dev/projects/cae339ce-93e9-4d7e-9603-d73b9864f5c1/files/4cd07182-070c-4a4e-9904-0cf122d56543.jpg', label: 'Пожарная сигнализация' },
+    ]
   },
   {
     id: 'contact',
