@@ -13,6 +13,7 @@ export interface Section {
   showButton?: boolean
   buttonText?: string
   gallery?: GalleryItem[]
+  logo?: string
 }
 
 export interface SectionProps extends Section {

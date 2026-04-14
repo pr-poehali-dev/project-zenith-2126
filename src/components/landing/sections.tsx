@@ -3,17 +3,9 @@ import { Badge } from "@/components/ui/badge"
 export const sections = [
   {
     id: 'hero',
-    subtitle: (
-      <div className="flex flex-col items-start gap-6">
-        <img
-          src="https://cdn.poehali.dev/projects/cae339ce-93e9-4d7e-9603-d73b9864f5c1/bucket/409709b3-437d-4108-b95b-828efac94081.png"
-          alt="ВСБ — группа компаний"
-          className="h-20 md:h-28 w-auto object-contain"
-        />
-        <Badge variant="outline" className="text-white border-white">Профессиональный электромонтаж</Badge>
-      </div>
-    ),
+    subtitle: <Badge variant="outline" className="text-white border-white">Профессиональный электромонтаж</Badge>,
     title: "Электрика. Безопасность. Автоматизация.",
+    logo: "https://cdn.poehali.dev/projects/cae339ce-93e9-4d7e-9603-d73b9864f5c1/bucket/409709b3-437d-4108-b95b-828efac94081.png",
     showButton: true,
     buttonText: 'Получить расчёт'
   },
