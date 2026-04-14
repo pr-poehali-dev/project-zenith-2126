@@ -3,33 +3,35 @@ import { Button } from "@/components/ui/button"
 import type { SectionProps } from "@/types"
 
 export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText, gallery, logo }: SectionProps) {
+  const isHero = !!logo
+
   return (
-    <section id={id} className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
+    <section id={id} className={`relative h-screen w-full snap-start flex flex-col ${isHero ? 'items-center justify-center text-center' : 'justify-center'} p-8 md:p-16 lg:p-24`}>
       {logo && (
         <motion.img
           src={logo}
           alt="ВСБ — группа компаний"
-          className="w-64 md:w-96 lg:w-[500px] h-auto object-contain mb-8 md:mb-10"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isActive ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          className="w-72 md:w-[420px] lg:w-[520px] h-auto object-contain"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={isActive ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         />
       )}
       {subtitle && (
         <motion.div
-          className="mb-6"
+          className={logo ? "mt-8 mb-4" : "mb-12"}
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: logo ? 0.3 : 0 }}
         >
           {subtitle}
         </motion.div>
       )}
       <motion.h2
-        className="text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-bold leading-[1.1] tracking-tight max-w-4xl text-white"
-        initial={{ opacity: 0, y: 50 }}
+        className={`font-bold leading-[1.1] tracking-tight text-white ${isHero ? 'text-2xl md:text-3xl lg:text-4xl max-w-2xl' : 'text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] max-w-4xl'}`}
+        initial={{ opacity: 0, y: 30 }}
         animate={isActive ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.3 }}
+        transition={{ duration: 0.5, delay: logo ? 0.4 : 0.1 }}
       >
         {title}
       </motion.h2>
@@ -75,7 +77,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12 md:mt-16"
+          className={isHero ? "mt-8" : "mt-12 md:mt-16"}
         >
           <Button
             variant="outline"
