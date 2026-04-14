@@ -5,36 +5,34 @@ import type { SectionProps } from "@/types"
 export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText, gallery, logo }: SectionProps) {
   return (
     <section id={id} className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
+      {logo && (
+        <motion.img
+          src={logo}
+          alt="ВСБ — группа компаний"
+          className="w-64 md:w-96 lg:w-[500px] h-auto object-contain mb-8 md:mb-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isActive ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        />
+      )}
       {subtitle && (
         <motion.div
-          className="mb-12"
+          className="mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={isActive ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
           {subtitle}
         </motion.div>
       )}
-      <div className="flex items-center gap-6 md:gap-10">
-        <motion.h2
-          className="text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-bold leading-[1.1] tracking-tight max-w-4xl text-white"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isActive ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-        >
-          {title}
-        </motion.h2>
-        {logo && (
-          <motion.img
-            src={logo}
-            alt="Логотип"
-            className="h-24 md:h-36 lg:h-44 w-auto object-contain flex-shrink-0"
-            initial={{ opacity: 0, x: 30 }}
-            animate={isActive ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          />
-        )}
-      </div>
+      <motion.h2
+        className="text-4xl md:text-6xl lg:text-[5rem] xl:text-[6rem] font-bold leading-[1.1] tracking-tight max-w-4xl text-white"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isActive ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        {title}
+      </motion.h2>
       {content && (
         <motion.p
           className="text-lg md:text-xl lg:text-2xl max-w-2xl mt-6 text-neutral-400"

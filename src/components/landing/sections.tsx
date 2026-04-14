@@ -5,7 +5,7 @@ export const sections = [
     id: 'hero',
     subtitle: <Badge variant="outline" className="text-white border-white">Профессиональный электромонтаж</Badge>,
     title: "Электрика. Безопасность. Автоматизация.",
-    logo: "https://cdn.poehali.dev/projects/cae339ce-93e9-4d7e-9603-d73b9864f5c1/bucket/409709b3-437d-4108-b95b-828efac94081.png",
+    logo: "https://cdn.poehali.dev/projects/cae339ce-93e9-4d7e-9603-d73b9864f5c1/bucket/bf083de2-819a-4e1c-a560-ac62889a9e43.jpg",
     showButton: true,
     buttonText: 'Получить расчёт'
   },
